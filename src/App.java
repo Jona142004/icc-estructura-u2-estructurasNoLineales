@@ -9,7 +9,7 @@ import main.Materia.Models.Node;
 public class App {
     public static void main(String[] args) throws Exception {
         //runArbolBinario();
-        runLevels();
+
         runArbolAVL();
     }
     public static void runArbolBinario(){
@@ -46,6 +46,7 @@ public class App {
         List<List<Node>> listaFinal = listLevels.listLevels(arbolBinario.getRoot());
         listLevels.printLevels(listaFinal);
     }
+
     public static void runArbolAVL(){
         int[] values = {10,20,15,24,9,8,21,23,50,25};
         ArbolAVL arbolAVL = new ArbolAVL();
@@ -55,5 +56,6 @@ public class App {
         }
         
         
-    }
+
+}
 }
