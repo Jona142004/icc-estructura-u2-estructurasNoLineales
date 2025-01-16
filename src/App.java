@@ -5,10 +5,11 @@ import main.Materia.Controller.ArbolAVL;
 import main.Materia.Controller.ArbolBinario;
 import main.Materia.Controller.ArbolRecorridos;
 import main.Materia.Models.Node;
-import main.Materia.Ejercicio_01_insert.InsertBSTTest;
-import main.Materia.Ejercicio_02_invert.InvertBinaryTree;
-import main.Materia.Ejercicio_03_ListLevels.*;
+import main.Materia.Ejercicio_01_insert.    InsertBSTTest;
+import main.Materia.Ejercicio_02_invert.    InvertBinaryTree;
 import main.Materia.Ejercicio_04_depth.Depth;
+import main.Materia.Ejercicio_03_ListLevels.*;
+import main.Materia.Ejercicio_04_depth.Depth;       
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -89,9 +90,15 @@ public static void runEjercicios() {
     insert.printLevels(invertedLevels);
 
     // Ejercicio 03: Listar niveles
+    InsertBSTTest insert2 = new     InsertBSTTest();
+    for (int value : values    ) {
+        insert2.insert(value);
+        }
+
+    Node root2 = insert2.getRoot(); // Corregido: usar insert2 para obtener la raíz
     System.out.println("\nListar niveles del árbol:");
     ListLevels listLevels = new ListLevels();
-    listLevels.printLevels(listLevels.listLevels(root));
+    listLevels.printLevels(listLevels.listLevels(root2));
 
     // Ejercicio 04: Calcular la profundidad máxima
     System.out.println("\nProfundidad  del árbol:");
