@@ -25,7 +25,7 @@ for (int value : values) {
     insert.insert(value);
 }
 Node root = insert.getRoot();
-System.out.println("\u00c1rbol original:");
+System.out.println("\arbol original:");
 insert.printLevels(insert.listLevels(root));
 
 Ejercicio 02: Invertir un Árbol Binario
@@ -44,7 +44,7 @@ Uso:
 
 InvertBinaryTree invert = new InvertBinaryTree();
 Node invertedRoot = invert.invertTree(root);
-System.out.println("\u00c1rbol invertido:");
+System.out.println("\arbol invertido:");
 insert.printLevels(insert.listLevels(invertedRoot));
 
 Ejercicio 03: Listar niveles de un Árbol Binario
