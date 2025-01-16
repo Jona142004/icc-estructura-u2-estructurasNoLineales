@@ -5,12 +5,17 @@ import main.Materia.Controller.ArbolAVL;
 import main.Materia.Controller.ArbolBinario;
 import main.Materia.Controller.ArbolRecorridos;
 import main.Materia.Models.Node;
+import main.Materia.Ejercicio_01_insert.InsertBSTTest;
+import main.Materia.Ejercicio_02_invert.InvertBinaryTree;
+import main.Materia.Ejercicio_03_ListLevels.*;
+import main.Materia.Ejercicio_04_depth.Depth;
 
 public class App {
     public static void main(String[] args) throws Exception {
         //runArbolBinario();
 
         runArbolAVL();
+        runEjercicios();
     }
     public static void runArbolBinario(){
         ArbolBinario arbolBinario = new ArbolBinario();
@@ -58,4 +63,40 @@ public class App {
         
 
 }
+public static void runEjercicios() {
+     // Ejercicio 01: Insertar nodos en el árbol binario de búsqueda
+     InsertBSTTest insert = new InsertBSTTest();
+     int[] values = {5, 3, 7, 2, 4, 6, 8};
+     for (int value : values) {
+         insert.insert(value);
+     }
+
+     Node root = insert.getRoot();
+
+    // Imprimir el árbol original usando listLevels
+    System.out.println("Árbol original:");
+    List<List<Node>> levels = insert.listLevels(root);
+    insert.printLevels(levels);
+    System.out.println("");
+
+    // Ejercicio 02: Invertir el árbol
+    InvertBinaryTree invert = new InvertBinaryTree();
+    Node invertedRoot = invert.invertTree(root);
+
+    // Imprimir el árbol invertido con el mismo formato
+    System.out.println("Árbol invertido:");
+    List<List<Node>> invertedLevels = insert.listLevels(invertedRoot);
+    insert.printLevels(invertedLevels);
+
+    // Ejercicio 03: Listar niveles
+    System.out.println("\nListar niveles del árbol:");
+    ListLevels listLevels = new ListLevels();
+    listLevels.printLevels(listLevels.listLevels(root));
+
+    // Ejercicio 04: Calcular la profundidad máxima
+    System.out.println("\nProfundidad  del árbol:");
+    Depth depth = new Depth();
+    depth.printDepth(root);
 }
+}
+
