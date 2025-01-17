@@ -4,7 +4,9 @@ import main.Ejecicio_03_listLevels.ListLevels;
 import main.Materia.Controller.ArbolAVL;
 import main.Materia.Controller.ArbolBinario;
 import main.Materia.Controller.ArbolRecorridos;
+import main.Materia.Controller.Graph;
 import main.Materia.Models.Node;
+import main.Materia.Models.NodeG;
 import main.Materia.Ejercicio_01_insert.    InsertBSTTest;
 import main.Materia.Ejercicio_02_invert.    InvertBinaryTree;
 import main.Materia.Ejercicio_04_depth.Depth;
@@ -15,8 +17,9 @@ public class App {
     public static void main(String[] args) throws Exception {
         //runArbolBinario();
 
-        runArbolAVL();
-        runEjercicios();
+        //runArbolAVL();
+        //runEjercicios();
+        runGraph();
     }
     public static void runArbolBinario(){
         ArbolBinario arbolBinario = new ArbolBinario();
@@ -105,5 +108,19 @@ public static void runEjercicios() {
     Depth depth = new Depth();
     depth.printDepth(root);
 }
+    public static void runGraph(){
+        Graph grafo = new Graph();
+        NodeG nodo1 = grafo.addNode(5);
+        NodeG nodo2 =grafo.addNode(7);
+        NodeG nodo3 =grafo.addNode(9);
+        NodeG nodo4 =grafo.addNode(11);
+        NodeG nodo5 =grafo.addNode(3);
+        grafo.addEdge(nodo1, nodo2);
+        grafo.addEdge(nodo1, nodo5);
+        grafo.addEdge(nodo1, nodo3);
+        grafo.addEdge(nodo2, nodo3);
+        grafo.addEdge(nodo5, nodo4);
+        grafo.printGraph();
+    }
 }
 
