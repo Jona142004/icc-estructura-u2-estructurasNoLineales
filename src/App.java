@@ -16,10 +16,12 @@ import main.Materia.Ejercicio_04_depth.Depth;
 public class App {
     public static void main(String[] args) throws Exception {
         //runArbolBinario();
-
         //runArbolAVL();
         //runEjercicios();
-        runGraph();
+        //runGraph();
+        //runGraphDirigifo();
+        //runGraphNoDirigifo();
+        runGraphEjercicio();
     }
     public static void runArbolBinario(){
         ArbolBinario arbolBinario = new ArbolBinario();
@@ -121,6 +123,82 @@ public static void runEjercicios() {
         grafo.addEdge(nodo2, nodo3);
         grafo.addEdge(nodo5, nodo4);
         grafo.printGraph();
+    }
+    public static void runGraphDirigifo(){
+        System.out.println("DIRIGIDO");
+        Graph grafo = new Graph();
+        NodeG nodo0 = grafo.addNode(0);
+        NodeG nodo1 =grafo.addNode(1);
+        NodeG nodo2 =grafo.addNode(2);
+        NodeG nodo3 =grafo.addNode(3);
+        NodeG nodo4 =grafo.addNode(4);
+        NodeG nodo5 =grafo.addNode(5);
+        grafo.addEdgeD(nodo0, nodo3);
+        grafo.addEdgeD(nodo0, nodo5);
+        grafo.addEdgeD(nodo3, nodo2);
+        grafo.addEdgeD(nodo3, nodo4);
+        
+        grafo.addEdgeD(nodo4, nodo1);
+        grafo.addEdgeD(nodo2, nodo1);
+        grafo.addEdgeD(nodo1, nodo0);
+
+        grafo.printGraph();  
+        System.out.println("BFS DIRIGO");
+        grafo.getBFS(nodo0);
+        System.out.println("DFS DIRIGIDO");
+        grafo.getDFS(nodo0);
+    }
+    public static void runGraphNoDirigifo(){
+        System.out.println(" ");
+        System.out.println("NO Dirigido");
+        Graph grafo = new Graph();
+        NodeG nodo0 = grafo.addNode(0);
+        NodeG nodo1 =grafo.addNode(1);
+        NodeG nodo2 =grafo.addNode(2);
+        NodeG nodo3 =grafo.addNode(3);
+        NodeG nodo4 =grafo.addNode(4);
+        NodeG nodo5 =grafo.addNode(5);
+        grafo.addEdge(nodo0, nodo3);
+        grafo.addEdge(nodo0, nodo5);
+        grafo.addEdge(nodo3, nodo2);
+        grafo.addEdge(nodo3, nodo4);
+        
+        grafo.addEdge(nodo4, nodo1);
+        grafo.addEdge(nodo2, nodo1);
+        grafo.addEdge(nodo1, nodo0);
+
+        grafo.printGraph();  
+        System.out.print("BFS NO DIRIGIDO");
+        grafo.getBFS(nodo0);
+        System.out.println(" ");
+        System.out.print("DFS NO DIRIGIDO");
+        grafo.getDFS(nodo0);
+    }
+    public static void runGraphEjercicio(){
+        Graph grafo = new Graph();
+        NodeG nodo0 = grafo.addNode(0);
+        NodeG nodo1 =grafo.addNode(1);
+        NodeG nodo2 =grafo.addNode(2);
+        NodeG nodo3 =grafo.addNode(3);
+        NodeG nodo4 =grafo.addNode(4);
+        NodeG nodo5 =grafo.addNode(5);
+        NodeG nodo7 =grafo.addNode(7);
+        NodeG nodo8 =grafo.addNode(8);
+        NodeG nodo9 =grafo.addNode(9);
+        grafo.addEdge(nodo0, nodo1);
+        grafo.addEdge(nodo0, nodo3);
+        grafo.addEdge(nodo0, nodo5);
+        grafo.addEdge(nodo1, nodo2);
+        grafo.addEdge(nodo1, nodo4);
+        grafo.addEdge(nodo1, nodo8);
+        grafo.addEdge(nodo2, nodo3);
+        grafo.addEdge(nodo3, nodo4);
+        grafo.addEdge(nodo3, nodo7);
+        grafo.addEdge(nodo3, nodo9);
+        grafo.addEdge(nodo4, nodo8);
+        grafo.addEdge(nodo3, nodo4);
+        grafo.addEdge(nodo7, nodo8);
+        grafo.getDFSO(nodo0, 7);
     }
 }
 
